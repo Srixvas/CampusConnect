@@ -5,6 +5,7 @@ const cors = require("cors");
 
 const pool = require("./config/db");
 const postRoutes = require("./routes/postRoutes");
+const authRoutes = require("./routes/authRoutes");
 
 const app = express();
 
@@ -40,6 +41,7 @@ app.get("/api/students", async (req, res) => {
 
 // Posts API
 app.use("/api/posts", postRoutes);
+app.use("/api/auth", authRoutes);
 
 const PORT = process.env.PORT || 5000;
 
